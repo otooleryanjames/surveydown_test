@@ -1,0 +1,32 @@
+---
+format: html
+---
+
+```{r}
+library(surveydown)
+```
+
+--- welcome
+
+# Welcome to our survey!
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'penguins',
+  label = "Which type of penguin do you like the best?",
+  option = c(
+    'Adélie'    = 'adelie',
+    'Chinstrap' = 'chinstrap',
+    'Gentoo'    = 'gentoo'
+  )
+)
+```
+
+--- end
+
+This is the last page of the survey.
+
+```{r}
+sd_close()
+```
