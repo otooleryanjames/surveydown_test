@@ -3,24 +3,121 @@ format: html
 ---
 
 ```{r}
+#| echo: false
+#| warning: false
+
 library(surveydown)
 ```
 
---- welcome
+--- sweets
 
 # Welcome to our survey!
 
 ```{r}
+#| echo: false
+
 sd_question(
   type  = 'mc',
-  id    = 'penguins',
-  label = "Which type of penguin do you like the best?",
+  id    = 'pie',
+  label = "Which type of holiday pie do you like the best?",
   option = c(
-    'Adélie'    = 'adelie',
-    'Chinstrap' = 'chinstrap',
-    'Gentoo'    = 'gentoo'
+    'Pumpkin'    = 'pumpkin',
+    'Apple' = 'apple',
+    'Sweet Potato'    = 'sweet_potato',
+    'None of the above' = 'none_listed'
   )
 )
+
+```
+
+```{r}
+#| echo: false
+
+sd_next()
+
+```
+
+--- sides
+
+# Hm, we shouldn't have started with dessert...
+
+```{r}
+#| echo: false
+
+sd_question(
+  type  = 'mc_multiple',
+  id    = 'side_dishes',
+  label = "Which holiday side dishes do you prefer?",
+  option = c(
+    'Mashed Potatoes'    = 'mashed_potatoes',
+    'Mac and Cheese' = 'mac_and_cheese',
+    'Green Beans' = 'green_beans',
+    'Corn Bread' = 'corn_bread',
+    'Cranberry Sauce' = 'cranberry_sauce',
+    'Stuffing' = 'stuffing',
+    'None of the above' = 'none_listed'
+  )
+)
+
+```
+
+```{r}
+#| echo: false
+
+sd_next()
+
+```
+
+--- mains
+
+# Okay, but the important question
+
+And be honest...
+
+```{r}
+#| echo: false
+
+sd_question(
+  type  = 'slider',
+  id    = 'turkey_belief',
+  label = "To what extent do you believe Turkey has to be served with a holiday feast?",
+  option = c(
+    "It doesn't have to be"    = "does_not",
+    "It could be"  = "could",
+    "It probably should be"          = "should",
+    "It must be" = "must"
+  )
+)
+
+```
+
+```{r}
+#| echo: false
+
+sd_next()
+
+```
+
+--- other thoughts
+
+In case we missed anything...
+
+```{r}
+#| echo: false
+
+sd_question(
+  type  = "textarea",
+  id    = "opinions",
+  label = "Do you have any other strong, holiday-related, food opinions that you would like to share?"
+)
+
+```
+
+```{r}
+#| echo: false
+
+sd_next()
+
 ```
 
 --- end
@@ -28,5 +125,7 @@ sd_question(
 This is the last page of the survey.
 
 ```{r}
+#| echo: false
+
 sd_close()
 ```

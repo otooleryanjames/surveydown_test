@@ -1,3 +1,4 @@
+options(shiny.launch.browser = TRUE)
 library(surveydown)
 
 # Connects to database
